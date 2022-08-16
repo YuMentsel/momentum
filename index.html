@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>momentum</title>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+
+        <div class="player">
+          <div class="wrapper">
+              <div class="details">
+                  <div class="track-name">Track Name</div>
+              </div>
+  
+              <div class="slider_container">
+                  <div class="current-time">00:00</div>
+                  <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                  <div class="total-duration">00:00</div>
+              </div>
+  
+              <div class="slider_container">
+                <div class="sound on" onclick="toggleSound()"></div>
+                  <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+              </div>
+              <div class="buttons">
+                  <div class="random-track" onclick="randomTrack()">
+                      <i class="fas fa-random fa-2x" title="random"></i>
+                  </div>
+                  <div class="prev-track play-prev player-icon" onclick="prevTrack()">
+                  </div>
+                  <div class="playpause-track play player-icon" onclick="playpauseTrack()">
+
+                  </div>
+                  <div class="next-track play-next player-icon" onclick="nextTrack()">
+                  </div>
+                  <div class="repeat-track" onclick="repeatTrack()">
+                      <i class="fa fa-repeat fa-2x" title="repeat"></i>
+                  </div>
+              </div>
+              <ul class="play-list">
+              </ul> 
+          </div>
+      </div>
+      
+      <div class="weather">
+        <input type="text" class="city" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time class="time"></time>
+      <date class="date"></date>
+      <div class="greeting-container">
+        <span class="greeting"></span>
+        <input type="text" class="name" />
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="lang-wrapper">
+      <button class="lang-icon en"></button>  
+      </div>
+      
+      <div class="quote-wrapper">
+        <button class="change-quote"></button>
+        <div>
+          <div class="quote"></div>
+          <div class="author"></div>
+        </div>
+      </div>
+      <div class="todo-wrapper">
+      ToDo на <br> доработке
+
+      </div>
+    </footer>
+</div>
+  <!-- <script type="module" src="js/index.js"></script> -->
+  <script src="js/script.js"></script>
+</body>
+</html>

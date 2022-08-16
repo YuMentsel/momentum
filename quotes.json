@@ -1,0 +1,364 @@
+[{
+    "quote_id": 1,
+    "quote": {
+        "ru": "Мне не грозит опасность, Скайлер, я сам опасность!",
+        "en": "I am not in danger, Skyler. I am the danger!"
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 2,
+    "quote": {
+        "ru": "Не лезь на мою территорию!",
+        "en": "Stay out of my territory."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 3,
+    "quote": {
+        "ru": "Пусть его смерть вас утешит.",
+        "en": "Mas his death satisfy you."
+    },
+    "author": {
+        "ru": "Гус Фринг",
+        "en": "Gus Fring"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 4,
+    "quote": {
+        "ru": "Я видел, как умерла Джейн. Я был там и смотрел, как она умирает. Я видел, как она захлебнулась собственной рвотой. Я мог спасти ее, но я этого не сделал.",
+        "en": "I watched Jane die. I was there. And I watched her die. I watched her overdose and choke to death. I could have saved her. But I didn’t."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 5,
+    "quote": {
+        "ru": "— Скажи моё имя. — Хайзенберг. — Ты чертовски прав.",
+        "en": "Say my name."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 6,
+    "quote": {
+        "ru": "Поздравляю, вы только что оставили своей семье подержанный Subaru",
+        "en": "Congratulations, you’ve just left your family a second-hand Subaru."
+    },
+    "author": {
+        "ru": "Сол Гудман",
+     "en": "Saul Goodman"
+},
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 7,
+    "quote": {
+        "ru": "Да уж, ты влип в говно по колено обеими ногами. Но, знаешь... ты можешь купить лопату.",
+        "en": "Yeah, you do seem to have a little s*** creek action going... You know, FYI, you can buy a paddle."
+    },
+    "author": {
+        "ru": "Сол Гудман",
+        "en": "Saul Goodman"
+},
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 8,
+    "quote": {
+        "ru": "Действуй осторожно",
+        "en": "Tread lightly."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 9,
+    "quote": {
+        "ru": "Вы двое сосёте в торговле метамфетамином.",
+        "en": "You two suck at peddling meth."
+    },
+    "author": {
+        "ru": "Сол Гудман",
+        "en": "Saul Goodman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 10,
+    "quote": {
+        "ru": "Это какой химический элемент? — Проволока?!",
+        "en": "Ooooooh, wire."
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+      },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 11,
+    "quote": {
+        "ru": "И что мы делаем? Роботa?!",
+        "en": "A robot?!"
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 12,
+    "quote": {
+        "ru": "Какой смысл быть вне закона, если у тебя есть при этом обязанности?",
+        "en": "What good is being an outlaw when you have responsibilities."
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 13,
+    "quote": {
+        "ru": "Ты сумасшедший, дегенерат, кусок грязи, и ты заслуживаешь смерти.",
+        "en": "You're an insane, degenerate piece of filth, and you deserve to die."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 14,
+    "quote": {
+        "ru": "Ты знаешь, как они обычно говорят: «Приятно было пообщаться»? Так вот не было.",
+        "en": "You know how they say, 'It's been a pleasure?' It hasn't."
+    },
+    "author": {
+        "ru": "Майк Эрмантраут",
+        "en": "Mike Ehrmantraut"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 15,
+    "quote": {
+        "ru": "Как я теперь буду здесь жить, а? Весь мой дом пахнет сыром из-под пальцев ног и химчисткой.",
+        "en": "How am I supposed to live here now, huh? My whole house smells like toe cheese and dry cleaning."
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 16,
+    "quote": {
+        "ru": "В следующий раз, когда ты принесешь на работу пистолет, не сказав мне, я засуну его тебе в задницу боком.",
+        "en": "The next time you bring a gun to a job without telling me, I will stick it up your ass sideways."
+    },
+    "author": {
+        "ru": "Майк Эрмантраут",
+        "en": "Mike Ehrmantraut"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 17,
+    "quote": {
+        "ru": "А со стволом у виска — все как Мерил Стрип.",
+        "en": "Everyone sounds like Meryl Streep with a gun to their head."
+    },
+    "author": {
+        "ru": "Майк Эрмантраут",
+        "en": "Mike Ehrmantraut"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 18,
+    "quote": {
+        "ru": "Мы делаем отраву для людей, которым на всё насрать. У нас, пожалуй, самые нетребовательные клиенты в мире.",
+        "en": "We make poison for people who don’t care. We probably have the most unpicky customers in the world."
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 19,
+    "quote": {
+        "ru": "Слушай, а если как в математике, сложить положительного гондона с отрицательным гондоном и получить, типа, ноль гондонов?",
+        "en": "You add a plus douce bag to a minus douche bag and you get, like, zero douche bags."
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 20,
+    "quote": {
+        "ru": "Не пей за рулем. Но если будешь, позвони мне.",
+        "en": "Don't drink and drive. But if you do, call me."
+    },
+    "author": {
+        "ru": "Сол Гудман",
+        "en": "Saul Goodman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 21,
+    "quote": {
+        "ru": "Среди воров честных нет... кроме нас, конечно же.",
+        "en": "There's no honor among thieves... Except for us of course."
+    },
+    "author": {
+        "ru": "Сол Гудман",
+        "en": "Saul Goodman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 22,
+    "quote": {
+        "ru": "Ага, с**а! Магниты!",
+        "en": "Yeah, b****! Magnets!"
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 23,
+    "quote": {
+        "ru": "Некоторые люди невосприимчивы к хорошим советам.",
+        "en": "Some people are immune to good advice."
+    },
+    "author": {
+        "ru": "Сол Гудман",
+        "en": "Saul Goodman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 24,
+    "quote": {
+        "ru": "Господи Иисусе, Мари. Это минералы!",
+        "en": "Jesus Christ, Marie. They're minerals!"
+    },
+    "author": {
+         "ru": "Хэнк Шрэйдер",
+        "en": "Hank Schrader"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 25,
+    "quote": {
+        "ru": "Меня зовут Скайлер Уайт, епта.",
+        "en": "My name is Skyler White, yo."
+    },
+    "author": {
+         "ru": "Скайлер Уайт",
+        "en": "Skyler White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 26,
+    "quote": {
+        "ru": "Кто-то должен защитить эту семью от человека, который защищает эту семью.",
+        "en": "Someone has to protect this family, from the man that protects this family."
+    },
+    "author": {
+         "ru": "Скайлер Уайт",
+        "en": "Skyler White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 27,
+    "quote": {
+        "ru": "Заткнись! Заткнись! Заткнись!",
+        "en": "Shut up! Shut up! Shut up!"
+    },
+    "author": {
+         "ru": "Скайлер Уайт",
+        "en": "Skyler White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 28,
+    "quote": {
+        "ru": "Я жду, когда рак вернется».",
+        "en": "I'm waiting for the cancer to come back."
+    },
+    "author": {
+         "ru": "Скайлер Уайт",
+        "en": "Skyler White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 29,
+    "quote": {
+        "ru": "Я не могу вспомнить, когда в последний раз была счастлива.",
+        "en": "I can't remember the last time I was happy."
+    },
+    "author": {
+         "ru": "Скайлер Уайт",
+        "en": "Skyler White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 30,
+    "quote": {
+        "ru": "Ты мой пропуск на свободу, сука!",
+        "en": "You're my free pass.... Bitch!"
+    },
+    "author": {
+        "ru": "Джесси Пинкмен",
+        "en": "Jesse Pinkman"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 31,
+    "quote": {
+        "ru": "Мы закончили, когда я сказал, что мы закончили",
+        "en": "We're done when i say we're done."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 31,
+    "quote": {
+        "ru": "Ты спрашивал, хочу ли я варить мет или наварить бабла? Я хочу построить империю.",
+        "en": "You asked me if I was in the meth business or the money business. Neither. I am in the empire business."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}, {
+    "quote_id": 33,
+    "quote": {
+        "ru": "Курить марихуану, жрать «Читос» и дрочить не подходит под определение «планы».",
+        "en": "Smoking marijuana, eating cheetos, and masturbating do not constitute plans in my book."
+    },
+    "author": {
+        "ru": "Уолтер Уайт",
+        "en": "Walter White"
+    },
+    "series": "Breaking Bad"
+}]
