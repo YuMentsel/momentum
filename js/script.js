@@ -1,6 +1,3 @@
-// import playList from './playList.js';
-// console.log(playList);
-
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
@@ -81,18 +78,9 @@ function showGreeting() {
     ],
   };
 
-  // console.log(greetingTranslation[language][0][timeOfDay]);
   greeting.textContent = `${greetingTranslation[language][0][timeIndex]}, `;
   enterName.placeholder = `${greetingTranslation[language][1]}`;
 }
-
-// function showGreeting() {
-//   getTimeOfDay();
-//   const greetingText = `Good ${timeOfDay} `;
-//   greeting.textContent = greetingText;
-// };
-
-// showGreeting();
 
 // Сохранение имени
 
@@ -109,14 +97,6 @@ function getLocalStorage() {
   }
 }
 window.addEventListener('load', getLocalStorage);
-
-// или слушатель
-// name.addEventListener(“change”, (event) => {
-//   setLocalStorage(event.target.value)
-//  })
-//  Только setLocalStorage не меняй как выше писали
-
-//
 
 function showTime() {
   const currentTime = new Date().toLocaleTimeString();
@@ -145,9 +125,6 @@ function setBg() {
   img.onload = () => {
     body.style.backgroundImage = `url('${img.src}')`;
   };
-  console.log(timeOfDay);
-  console.log(randomNum);
-  console.log(bgNum);
 }
 setBg();
 
@@ -160,13 +137,11 @@ slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 
 function getSlideNext(e) {
-  console.log(e.target);
   randomNum == 20 ? (randomNum = 1) : (randomNum += 1);
   setBg();
 }
 
 function getSlidePrev(e) {
-  console.log(e.target);
   randomNum == 1 ? (randomNum = 20) : (randomNum -= 1);
   setBg();
 }
@@ -186,20 +161,9 @@ const weatherError = document.querySelector('.weather-error');
 // }
 
 async function getWeather() {
-  // cityValue = {
-  //   'ru': 'Минск',
-  //   'en': 'Minsk'
-  // };
-
   if (city.value === '') {
     city.value = 'Minsk';
   }
-
-  // language == 'ru' ? city.value = 'Минск' : city.value = 'Minsk';
-
-  console.log(city.value);
-
-  // city.value ?? 'Minsk'
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${language}&appid=7347d35ae08907e2f859501f2a505cd8&units=metric`;
   const res = await fetch(url);
@@ -228,9 +192,6 @@ async function getWeather() {
     if (res.status === 404) {
       error();
     }
-    // else {
-    //   console.log(err);
-    // }
   }
 }
 
@@ -273,8 +234,6 @@ function setCity(e) {
   }
 }
 city.addEventListener('keypress', setCity);
-
-// city.addEventListener('change', getWeather);
 
 // Цитаты
 
@@ -416,25 +375,25 @@ const playList = [
   {
     img: 'images/stay.png',
     name: 'Breaking Bad',
-    music: '../assets/sounds/Breaking Bad.mp3',
+    music: './assets/sounds/Breaking Bad.mp3',
     totalDuration: '01:15',
   },
   {
     img: 'images/fallingdown.jpg',
     name: 'River Flows In You',
-    music: '../assets/sounds/River Flows In You.mp3',
+    music: './assets/sounds/River Flows In You.mp3',
     totalDuration: '01:37',
   },
   {
     img: 'images/faded.png',
     name: 'Aqua Caelestis',
-    music: '../assets/sounds/Aqua Caelestis.mp3',
+    music: './assets/sounds/Aqua Caelestis.mp3',
     totalDuration: '00:39',
   },
   {
     img: 'images/ratherbe.jpg',
     name: 'Summer Wind',
-    music: '../assets/sounds/Summer Wind.mp3',
+    music: './assets/sounds/Summer Wind.mp3',
     totalDuration: '01:50',
   },
 ];
@@ -592,6 +551,5 @@ function playSong(e) {
 function setActiveSong() {
   currentSong = document.getElementById(`${track_index}`);
   songs.forEach((el) => el.classList.remove('item-active'));
-  console.log(currentSong);
   currentSong.classList.add('item-active');
 }
