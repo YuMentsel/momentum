@@ -50,7 +50,6 @@
               <div class="load">Пожалуйста, дождитесь загрузки аудио</div>
           </div>
       </div>
-      
       <div class="weather">
         <input type="text" class="city" />
         <i class="weather-icon owf"></i>
@@ -101,7 +100,6 @@
         <!-- <button class="lang-icon en"></button>   -->
       
       </div>
-      
       <div class="quote-wrapper">
         <button class="change-quote"></button>
         <div>
@@ -110,8 +108,23 @@
         </div>
       </div>
       <div class="todo-wrapper">
-      ToDo на <br> доработке
-
+        <div class="todo container">
+          <div class="card mb-4">
+            <ul id="tasksList" class="list-group list-group-flush">
+            </ul>
+          </div>
+          <div class="card bg-light" >
+            <div class="card-body">
+              <form id="form" class = "form-input">
+                <div class="form-group">
+                  <input type="text" class="form-control task-input" id="taskInput" required>
+                </div>
+                <button type="submit" class="btn task-btn btn-primary  btn-lg active"></button>
+              </form>
+            </div>
+          </div>
+      
+        </div>
       </div>
     </footer>
 </div>
