@@ -526,11 +526,11 @@ function setUpdate() {
 }
 
 playList.forEach((el, i) => {
-  const li = document.createElement('li');  
-  li.innerText = "client";
-  li.id ="key";
-  li.className = "client-class";
-  li.setAttribute("onclick","playSong()");
+  const li = document.createElement('li');
+  li.innerText = 'client';
+  li.id = 'key';
+  li.className = 'client-class';
+  li.setAttribute('onclick', 'playSong()');
   li.onclick = playSong;
   li.classList.add('play-item');
   li.textContent = playList[i].name;
@@ -544,7 +544,6 @@ function playSong(e) {
   let current_index = e.target.id;
   loadTrack(current_index);
   playpauseTrack();
-  
 }
 
 function setActiveSong() {
@@ -552,3 +551,69 @@ function setActiveSong() {
   songs.forEach((el) => el.classList.remove('item-active'));
   currentSong.classList.add('item-active');
 }
+
+// Настройка
+// const state = {
+//   language: 'en',
+//   photoSource: 'github',
+//   blocks: ['time', 'date','greeting', 'quote', 'weather', 'audio', 'todolist']
+// }
+
+const timeIcon = document.querySelector('.time-icon'),
+  dateIcon = document.querySelector('.date-icon'),
+  greetingIcon = document.querySelector('.greeting-icon'),
+  quoteIcon = document.querySelector('.quote-icon'),
+  weathIcon = document.querySelector('.weath-icon'),
+  audioIcon = document.querySelector('.audio-icon'),
+  todoIcon = document.querySelector('.todo-icon'),
+  settingsIcon = document.querySelector('.settings-icon'),
+  allIcons = document.querySelectorAll('.icons');
+
+function toggleHidden() {
+  allIcons.forEach((el) => {
+    el.classList.toggle('hidden');
+  });
+}
+settingsIcon.addEventListener('click', toggleHidden);
+
+function toggleOpacityTime() {
+  time.classList.toggle('opacity');
+}
+
+timeIcon.addEventListener('click', toggleOpacityTime);
+
+function toggleOpacityDate() {
+  date.classList.toggle('opacity');
+}
+dateIcon.addEventListener('click', toggleOpacityDate);
+
+const greetingContainer = document.querySelector('.greeting-container');
+const quoteContainer = document.querySelector('.quote-wrapper');
+const todoContainer = document.querySelector('.todo-wrapper');
+const playerContainer = document.querySelector('.player-wrapper');
+const weath = document.querySelector('.weather');
+
+function toggleOpacityGreeting() {
+  greetingContainer.classList.toggle('opacity');
+}
+greetingIcon.addEventListener('click', toggleOpacityGreeting);
+
+function toggleOpacityQuote() {
+  quoteContainer.classList.toggle('opacity');
+}
+quoteIcon.addEventListener('click', toggleOpacityQuote);
+
+function toggleOpacityTodo() {
+  todoContainer.classList.toggle('opacity');
+}
+todoIcon.addEventListener('click', toggleOpacityTodo);
+
+function toggleOpacityPlayer() {
+  playerContainer.classList.toggle('opacity');
+}
+audioIcon.addEventListener('click', toggleOpacityPlayer);
+
+function toggleOpacityWeather() {
+  weath.classList.toggle('opacity');
+}
+weathIcon.addEventListener('click', toggleOpacityWeather);
