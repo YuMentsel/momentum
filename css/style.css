@@ -599,3 +599,8 @@ i.fa-step-backward{
   background-size: 0px 0px;
   margin: 0;
 }
+
+.load {
+  font-size: 12px;
+  opacity: 0.1;
+}

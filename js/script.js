@@ -426,7 +426,9 @@ function pauseRandom() {
 function repeatTrack() {
   let current_index = track_index;
   loadTrack(current_index);
-  playTrack();
+  curr_track.play();
+  isPlaying = true;
+  setActiveSong();
 }
 function playpauseTrack() {
   isPlaying ? pauseTrack() : playTrack();
@@ -540,10 +542,22 @@ playList.forEach((el, i) => {
 const songs = document.querySelectorAll('.play-item');
 songs.forEach((e, i) => e.setAttribute('id', i));
 
+// function playSong(e) {
+//   let current_index = e.target.id;
+//   loadTrack(current_index);
+//   playpauseTrack();
+// }
+
 function playSong(e) {
   let current_index = e.target.id;
   loadTrack(current_index);
-  playpauseTrack();
+  curr_track.play();
+  if (!isPlaying) {
+    playpauseBtn.classList.toggle('pause');
+  }
+  isPlaying = true;
+  songs.forEach((el) => el.classList.remove('item-active'));
+  // repeatTrack();
 }
 
 function setActiveSong() {
@@ -553,11 +567,6 @@ function setActiveSong() {
 }
 
 // Настройка
-// const state = {
-//   language: 'en',
-//   photoSource: 'github',
-//   blocks: ['time', 'date','greeting', 'quote', 'weather', 'audio', 'todolist']
-// }
 
 const timeIcon = document.querySelector('.time-icon'),
   dateIcon = document.querySelector('.date-icon'),
