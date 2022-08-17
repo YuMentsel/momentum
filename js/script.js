@@ -108,44 +108,6 @@ function showTime() {
 
 showTime();
 
-// Слайдер изображений
-
-let randomNum;
-function getRandomNum() {
-  min = Math.ceil(1);
-  max = Math.floor(20);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-randomNum = getRandomNum();
-
-function setBg() {
-  let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
-  const img = new Image();
-  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
-  img.onload = () => {
-    body.style.backgroundImage = `url('${img.src}')`;
-  };
-}
-setBg();
-
-// Перелистывание изображения
-
-const slideNext = document.querySelector('.slide-next');
-const slidePrev = document.querySelector('.slide-prev');
-
-slideNext.addEventListener('click', getSlideNext);
-slidePrev.addEventListener('click', getSlidePrev);
-
-function getSlideNext(e) {
-  randomNum == 20 ? (randomNum = 1) : (randomNum += 1);
-  setBg();
-}
-
-function getSlidePrev(e) {
-  randomNum == 1 ? (randomNum = 20) : (randomNum -= 1);
-  setBg();
-}
-
 // Погода
 
 const weatherIcon = document.querySelector('.weather-icon');
@@ -601,6 +563,9 @@ const quoteContainer = document.querySelector('.quote-wrapper');
 const todoContainer = document.querySelector('.todo-wrapper');
 const playerContainer = document.querySelector('.player-wrapper');
 const weath = document.querySelector('.weather');
+const api = document.querySelector('.bg-wrapper');
+const apiIcon = document.querySelector('.api-icon');
+
 
 function toggleOpacityGreeting() {
   greetingContainer.classList.toggle('opacity');
@@ -611,6 +576,11 @@ function toggleOpacityQuote() {
   quoteContainer.classList.toggle('opacity');
 }
 quoteIcon.addEventListener('click', toggleOpacityQuote);
+
+function toggleOpacityApi() {
+  api.classList.toggle('opacity');
+}
+apiIcon.addEventListener('click', toggleOpacityApi);
 
 function toggleOpacityTodo() {
   todoContainer.classList.toggle('opacity');
@@ -626,3 +596,93 @@ function toggleOpacityWeather() {
   weath.classList.toggle('opacity');
 }
 weathIcon.addEventListener('click', toggleOpacityWeather);
+
+// API
+
+let choiceBg;
+
+if (!choiceBg) {
+  choiceBg = 'git';
+}
+
+// Слайдер изображений Git///////////////////////////////////////////////
+
+let randomNum;
+function getRandomNum() {
+  min = Math.ceil(1);
+  max = Math.floor(20);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+async function getLinkToImage() {
+  let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${timeOfDay}&client_id=lZ2XWIjdv_fQODDa29M1vv7dDTKWAWK4o9Cuhkk2tp4`;
+  let res = await fetch(url);
+  const data = await res.json();
+    let img = new Image();
+    let link = data.urls.regular;
+    body.style.backgroundImage = `url(${link})`;
+}
+
+function setBg() {
+  randomNum = getRandomNum();
+  let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
+  
+  if (choiceBg == 'git'){
+    let img = new Image();
+    img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+    img.onload = () => {
+    body.style.backgroundImage = `url('${img.src}')`;
+  };
+  } else if (choiceBg == 'un') {
+    getLinkToImage();
+  }
+}
+
+setBg();
+
+// Перелистывание изображения///////////////////////////////////////
+
+const slideNext = document.querySelector('.slide-next');
+const slidePrev = document.querySelector('.slide-prev');
+
+slideNext.addEventListener('click', getSlideNext);
+slidePrev.addEventListener('click', getSlidePrev);
+
+function getSlideNext(e) {
+  randomNum == 20 ? (randomNum = 1) : (randomNum += 1);
+  setBg();
+}
+
+function getSlidePrev(e) {
+  randomNum == 1 ? (randomNum = 20) : (randomNum -= 1);
+  setBg();
+}
+
+/////////////////////////////////////////
+
+const git = document.querySelector('.git');
+const un = document.querySelector('.un');
+const flickr = document.querySelector('.flickr');
+
+function choiceGit() {
+  choiceBg = 'git';
+  setBg();
+}
+git.addEventListener('click', choiceGit);
+
+function choiceUn() {
+  choiceBg = 'un';
+  setBg();
+}
+un.addEventListener('click', choiceUn);
+
+function choiceFlickr() {
+  choiceBg = 'flickr';
+  setBg();
+}
+flickr.addEventListener('click', choiceFlickr);
+
+
+
+

@@ -83,6 +83,7 @@ body {
 .slider-icon,
 .change-quote,
 .lang-icon,
+.bg,
 .settings-icon,
 .icons,
 .sound {
@@ -105,6 +106,7 @@ body {
 .lang-icon:hover,
 .settings-icon:hover,
 .icons:hover,
+.bg:hover,
 .sound:hover {
   opacity: 1;
 }
@@ -114,6 +116,7 @@ body {
 .change-quote:active,
 .settings-icon:active,
 .icons:active,
+.bg:active,
 .lang-icon:active {
   border: 0;
   outline: 0;  
@@ -304,7 +307,7 @@ body {
 }
 
 .en {
-  margin-bottom: -6px;
+  margin-bottom: -10px;
   width: 70px;
   height: 70px;
   background-size: 70px 70px;
@@ -563,6 +566,7 @@ i.fa-step-backward{
 
 .todo-icon {
   background-image: url("../assets/svg/todo.svg");
+  margin-bottom: 0px;
 }
 
 .time-icon {
@@ -573,16 +577,20 @@ i.fa-step-backward{
   background-image: url("../assets/svg/date.svg");
 }
 
+.api-icon {
+  background-image: url("../assets/svg/api.svg");
+}
+
 .audio-icon {
   margin-bottom: 7px;
   width: 28px;
   height: 28px;
   background-size: 28px 28px;
-  background-image: url("../assets/svg/weather.svg");
   background-image: url("../assets/svg/audio.svg");
 }
 
 .time,
+.bg-wrapper,
 .date,
 .quote-wrapper,
 .todo-wrapper,
@@ -603,4 +611,35 @@ i.fa-step-backward{
 .load {
   font-size: 12px;
   opacity: 0.1;
+}
+
+.bg-wrapper {
+  padding-bottom: 25px;
+  position: fixed;
+  bottom: 0;
+  left: 120px;
+}
+
+.bg {
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  margin-right: 15px;
+}
+
+.git {
+  padding-bottom: 3px;
+  background-image: url("../assets/svg/github.svg");
+}
+
+.un {
+  width: 29px;
+  height: 29px;
+  background-size: 29px 29px;
+  background-image: url("../assets/svg/un.svg");
+}
+
+.flickr {
+  background-image: url("../assets/svg/flickr.svg");
+  padding-bottom: 3px;
 }
