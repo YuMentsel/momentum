@@ -566,7 +566,6 @@ const weath = document.querySelector('.weather');
 const api = document.querySelector('.bg-wrapper');
 const apiIcon = document.querySelector('.api-icon');
 
-
 function toggleOpacityGreeting() {
   greetingContainer.classList.toggle('opacity');
 }
@@ -614,28 +613,38 @@ function getRandomNum() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
 async function getLinkToImage() {
   let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${timeOfDay}&client_id=lZ2XWIjdv_fQODDa29M1vv7dDTKWAWK4o9Cuhkk2tp4`;
   let res = await fetch(url);
   const data = await res.json();
-    let img = new Image();
-    let link = data.urls.regular;
-    body.style.backgroundImage = `url(${link})`;
+  // let img = new Image();
+  let link = data.urls.regular;
+  body.style.backgroundImage = `url(${link})`;
+}
+
+async function getLinkToImageFl() {
+  const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${timeOfDay}&extras=url_l&format=json&nojsoncallback=1`;
+  let res = await fetch(url);
+  const data = await res.json();
+  randomNum = getRandomNum();
+  let link = data.photos.photo[randomNum].url_l;
+  body.style.backgroundImage = `url(${link})`;
 }
 
 function setBg() {
   randomNum = getRandomNum();
   let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
-  
-  if (choiceBg == 'git'){
+
+  if (choiceBg == 'git') {
     let img = new Image();
     img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
     img.onload = () => {
-    body.style.backgroundImage = `url('${img.src}')`;
-  };
+      body.style.backgroundImage = `url('${img.src}')`;
+    };
   } else if (choiceBg == 'un') {
     getLinkToImage();
+  } else if (choiceBg == 'flickr') {
+    getLinkToImageFl();
   }
 }
 
@@ -649,12 +658,12 @@ const slidePrev = document.querySelector('.slide-prev');
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 
-function getSlideNext(e) {
+function getSlideNext() {
   randomNum == 20 ? (randomNum = 1) : (randomNum += 1);
   setBg();
 }
 
-function getSlidePrev(e) {
+function getSlidePrev() {
   randomNum == 1 ? (randomNum = 20) : (randomNum -= 1);
   setBg();
 }
@@ -682,7 +691,3 @@ function choiceFlickr() {
   setBg();
 }
 flickr.addEventListener('click', choiceFlickr);
-
-
-
-
