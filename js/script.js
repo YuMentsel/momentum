@@ -156,10 +156,6 @@ const humidity = document.querySelector('.humidity');
 const city = document.querySelector('.city');
 const weatherError = document.querySelector('.weather-error');
 
-// function changeCityLang() {
-//   language == 'ru' ? city.value = 'Минск' : city.value = 'Minsk';
-// }
-
 async function getWeather() {
   if (city.value === '') {
     city.value = 'Minsk';
@@ -254,7 +250,6 @@ function getRandomQuote() {
 
 async function getQuotes() {
   const quotes = 'quotes.json';
-  // const quotes = 'https://www.breakingbadapi.com/api/quotes';
   const res = await fetch(quotes);
   const data = await res.json();
 
@@ -457,7 +452,9 @@ function nextTrack() {
     track_index = 0;
   }
   loadTrack(track_index);
-  playTrack();
+  curr_track.play();
+  isPlaying = true;
+  setActiveSong();
 }
 function prevTrack() {
   if (track_index > 0) {
@@ -466,7 +463,9 @@ function prevTrack() {
     track_index = playList.length - 1;
   }
   loadTrack(track_index);
-  playTrack();
+  curr_track.play();
+  isPlaying = true;
+  setActiveSong();
 }
 function seekTo() {
   let seekto = curr_track.duration * (seek_slider.value / 100);
