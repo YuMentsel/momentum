@@ -202,7 +202,7 @@ let randomQuote;
 
 function getRandomQuoteNum() {
   min = Math.ceil(0);
-  max = Math.floor(32); //изменить число
+  max = Math.floor(32);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -214,9 +214,10 @@ async function getQuotes() {
   const quotes = 'quotes.json';
   const res = await fetch(quotes);
   const data = await res.json();
+  getRandomQuote();
 
-  quote.textContent = `${data[randomQuote ?? 0].quote[language]}`;
-  author.textContent = `${data[randomQuote ?? 0].author[language]}`;
+  quote.textContent = `${data[randomQuote].quote[language]}`;
+  author.textContent = `${data[randomQuote].author[language]}`;
 }
 getQuotes();
 
