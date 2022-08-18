@@ -25,7 +25,6 @@ let settingsObj = {
     'playerContainer',
     'todoContainer',
   ],
-
 };
 let language = 'en';
 
@@ -41,53 +40,69 @@ function changeLangObj() {
 }
 
 function removeSettingEl() {
-  if (time.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'time' })
+  if (time.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'time';
+    });
   } else {
-    settingsObj.blocks.push('time')
-  };
+    settingsObj.blocks.push('time');
+  }
 
-  if (date.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'date' })
+  if (date.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'date';
+    });
   } else {
-    settingsObj.blocks.push('date')
-  };
+    settingsObj.blocks.push('date');
+  }
 
-  if (greetingContainer.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'greetingContainer' })
+  if (greetingContainer.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'greetingContainer';
+    });
   } else {
-    settingsObj.blocks.push('greetingContainer')
-  };
+    settingsObj.blocks.push('greetingContainer');
+  }
 
-  if (quoteContainer.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'quoteContainer' })
+  if (quoteContainer.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'quoteContainer';
+    });
   } else {
-    settingsObj.blocks.push('quoteContainer')
-  };
+    settingsObj.blocks.push('quoteContainer');
+  }
 
-  if (weath.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'weath' })
+  if (weath.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'weath';
+    });
   } else {
-    settingsObj.blocks.push('weath')
-  };
+    settingsObj.blocks.push('weath');
+  }
 
-  if (playerContainer.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'playerContainer' })
+  if (playerContainer.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'playerContainer';
+    });
   } else {
-    settingsObj.blocks.push('playerContainer')
-  };
+    settingsObj.blocks.push('playerContainer');
+  }
 
-  if (todoContainer.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'todoContainer' })
+  if (todoContainer.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'todoContainer';
+    });
   } else {
-    settingsObj.blocks.push('todoContainer')
-  };
+    settingsObj.blocks.push('todoContainer');
+  }
 
-  if (api.classList.contains('opacity')){
-    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'api' })
+  if (api.classList.contains('opacity')) {
+    settingsObj.blocks = settingsObj.blocks.filter((i) => {
+      return i !== 'api';
+    });
   } else {
-    settingsObj.blocks.push('api')
-  };
+    settingsObj.blocks.push('api');
+  }
 
   saveSettingsToLS();
 }
@@ -101,14 +116,14 @@ function recoverySettings() {
     }
 
     settingsObj.blocks.forEach((el) => {
-    
       if (!el) {
         el.classList.remove('opacity');
       }
-    })
+    });
 
     getWeather();
     getQuotes();
+    createOption();
   }
 }
 
@@ -116,40 +131,38 @@ function recoverySettingEl() {
   if (localStorage.getItem('settingsLS')) {
     settingsObj = JSON.parse(localStorage.getItem('settingsLS'));
 
-      if (!settingsObj.blocks.includes('time')) {
-        time.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('time')) {
+      time.classList.add('opacity');
+    }
 
-      if (!settingsObj.blocks.includes('todoContainer')) {
-        todoContainer.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('todoContainer')) {
+      todoContainer.classList.add('opacity');
+    }
 
-      if (!settingsObj.blocks.includes('date')) {
-        date.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('date')) {
+      date.classList.add('opacity');
+    }
 
-      if (!settingsObj.blocks.includes('greetingContainer')) {
-        greetingContainer.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('greetingContainer')) {
+      greetingContainer.classList.add('opacity');
+    }
 
-      if (!settingsObj.blocks.includes('quoteContainer')) {
-        quoteContainer.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('quoteContainer')) {
+      quoteContainer.classList.add('opacity');
+    }
 
-      if (!settingsObj.blocks.includes('weath')) {
-        weath.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('weath')) {
+      weath.classList.add('opacity');
+    }
 
-      if (!settingsObj.blocks.includes('playerContainer')) {
-        playerContainer.classList.add('opacity');
-      }
+    if (!settingsObj.blocks.includes('playerContainer')) {
+      playerContainer.classList.add('opacity');
+    }
 
-      if (settingsObj.blocks.includes('api')) {
-        api.classList.remove('opacity');
-      }
-
+    if (settingsObj.blocks.includes('api')) {
+      api.classList.remove('opacity');
+    }
   }
-
 }
 
 window.addEventListener('load', recoverySettings);
@@ -166,6 +179,7 @@ function changeLang() {
   getWeather();
   getQuotes();
   changeLangObj();
+  createOption();
 }
 langIcon.addEventListener('click', changeLang);
 
@@ -652,12 +666,6 @@ playList.forEach((el, i) => {
 const songs = document.querySelectorAll('.play-item');
 songs.forEach((e, i) => e.setAttribute('id', i));
 
-// function playSong(e) {
-//   let current_index = e.target.id;
-//   loadTrack(current_index);
-//   playpauseTrack();
-// }
-
 function playSong(e) {
   let current_index = e.target.id;
   loadTrack(current_index);
@@ -766,7 +774,18 @@ let randomNum;
 
 let tag = document.querySelector('.dropdown-select');
 
-let tagValue;
+let option = document.querySelector('option');
+
+function createOption() {
+  const optionSelect = document.createElement('option');
+  option.value = timeOfDay;
+  language == 'ru'
+    ? (option.textContent = 'время суток')
+    : (option.textContent = timeOfDay);
+  optionSelect.prepend('tag');
+}
+
+createOption();
 
 function getRandomNum() {
   min = Math.ceil(1);
@@ -776,8 +795,7 @@ function getRandomNum() {
 randomNum = getRandomNum();
 
 async function getLinkToImage() {
-  !tagValue ? (tagValue = timeOfDay) : (tagValue = tag.value);
-  let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tagValue}&client_id=MxVzveKcx1lafBRfRN9PY6rsnpRJ3qvfJXbOnvIaqHA`;
+  let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tag.value}&client_id=MxVzveKcx1lafBRfRN9PY6rsnpRJ3qvfJXbOnvIaqHA`;
   let res = await fetch(url);
   const data = await res.json();
   let link = data.urls.regular;
@@ -785,8 +803,8 @@ async function getLinkToImage() {
 }
 
 async function getLinkToImageFl() {
-  !tagValue ? (tagValue = timeOfDay) : (tagValue = tag.value);
-  let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${tagValue}&extras=url_l&format=json&nojsoncallback=1`;
+  console.log(tag.value);
+  let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${tag.value}&extras=url_l&format=json&nojsoncallback=1`;
   let res = await fetch(url);
   const data = await res.json();
   randomNum = getRandomNum();
@@ -796,7 +814,6 @@ async function getLinkToImageFl() {
 
 function setBg() {
   let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
-
   if (choiceBg == 'git') {
     let img = new Image();
     img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
@@ -813,6 +830,9 @@ function setBg() {
 setBg();
 
 tag.addEventListener('change', setBg);
+option.addEventListener('click', setBg);
+option.addEventListener('click', createOption);
+tag.addEventListener('change', createOption);
 
 // Перелистывание изображения///////////////////////////////////////
 
