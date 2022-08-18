@@ -7,7 +7,36 @@ const enterName = document.querySelector('.name');
 
 // Язык
 
+let settingsObj = {
+  language: 'en',
+};
 let language = 'en';
+
+function saveSettingsToLS() {
+  localStorage.setItem('settingsLS', JSON.stringify(settingsObj));
+}
+
+function changeLangObj() {
+  settingsObj.language == 'en' ? 
+  settingsObj.language = 'ru' : settingsObj.language = 'en';
+  saveSettingsToLS();
+}
+
+function recoverySettings() {
+  if (localStorage.getItem('settingsLS')) {
+    settingsObj = JSON.parse(localStorage.getItem('settingsLS'));
+    language = settingsObj.language;
+    if (language == 'ru') {
+      language = 'ru';
+      langIcon.classList.toggle('ru');
+    }
+    getWeather();
+    getQuotes();
+  }
+}
+
+window.addEventListener('load', recoverySettings);
+
 function changeLang() {
   if (language == 'en') {
     language = 'ru';
@@ -18,7 +47,7 @@ function changeLang() {
   }
   getWeather();
   getQuotes();
-  // changeCityLang();
+  changeLangObj();
 }
 langIcon.addEventListener('click', changeLang);
 
@@ -611,7 +640,6 @@ let randomNum;
 
 let tag = document.querySelector('.dropdown-select');
 
-
 let tagValue;
 
 function getRandomNum() {
@@ -622,9 +650,8 @@ function getRandomNum() {
 randomNum = getRandomNum();
 
 async function getLinkToImage() {
-  (!tagValue) ? tagValue = timeOfDay : tagValue = tag.value;
+  !tagValue ? (tagValue = timeOfDay) : (tagValue = tag.value);
   let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tagValue}&client_id=MxVzveKcx1lafBRfRN9PY6rsnpRJ3qvfJXbOnvIaqHA`;
-  console.log(url);
   let res = await fetch(url);
   const data = await res.json();
   let link = data.urls.regular;
@@ -632,20 +659,17 @@ async function getLinkToImage() {
 }
 
 async function getLinkToImageFl() {
-  (!tagValue) ? tagValue = timeOfDay : tagValue = tag.value;
-  console.log(tagValue);
+  !tagValue ? (tagValue = timeOfDay) : (tagValue = tag.value);
   let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${tagValue}&extras=url_l&format=json&nojsoncallback=1`;
   let res = await fetch(url);
   const data = await res.json();
   randomNum = getRandomNum();
   let link = data.photos.photo[randomNum].url_l;
   body.style.backgroundImage = `url(${link})`;
-  console.log(url);
 }
 
 function setBg() {
   let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
-  
 
   if (choiceBg == 'git') {
     let img = new Image();
@@ -658,7 +682,6 @@ function setBg() {
   } else if (choiceBg == 'flickr') {
     getLinkToImageFl();
   }
-  
 }
 
 setBg();
@@ -817,4 +840,3 @@ function renderTask(task) {
 
   tasksList.insertAdjacentHTML('beforeend', taskHTML);
 }
-
