@@ -608,6 +608,12 @@ if (!choiceBg) {
 // Слайдер изображений Git///////////////////////////////////////////////
 
 let randomNum;
+
+let tag = document.querySelector('.dropdown-select');
+
+
+let tagValue;
+
 function getRandomNum() {
   min = Math.ceil(1);
   max = Math.floor(20);
@@ -616,26 +622,30 @@ function getRandomNum() {
 randomNum = getRandomNum();
 
 async function getLinkToImage() {
-  let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${timeOfDay}&client_id=lZ2XWIjdv_fQODDa29M1vv7dDTKWAWK4o9Cuhkk2tp4`;
+  (!tagValue) ? tagValue = timeOfDay : tagValue = tag.value;
+  let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tagValue}&client_id=MxVzveKcx1lafBRfRN9PY6rsnpRJ3qvfJXbOnvIaqHA`;
+  console.log(url);
   let res = await fetch(url);
   const data = await res.json();
-  // let img = new Image();
   let link = data.urls.regular;
   body.style.backgroundImage = `url(${link})`;
 }
 
 async function getLinkToImageFl() {
-  const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${timeOfDay}&extras=url_l&format=json&nojsoncallback=1`;
+  (!tagValue) ? tagValue = timeOfDay : tagValue = tag.value;
+  console.log(tagValue);
+  let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${tagValue}&extras=url_l&format=json&nojsoncallback=1`;
   let res = await fetch(url);
   const data = await res.json();
   randomNum = getRandomNum();
   let link = data.photos.photo[randomNum].url_l;
   body.style.backgroundImage = `url(${link})`;
+  console.log(url);
 }
 
 function setBg() {
-
   let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
+  
 
   if (choiceBg == 'git') {
     let img = new Image();
@@ -648,9 +658,12 @@ function setBg() {
   } else if (choiceBg == 'flickr') {
     getLinkToImageFl();
   }
+  
 }
 
 setBg();
+
+tag.addEventListener('change', setBg);
 
 // Перелистывание изображения///////////////////////////////////////
 
@@ -804,3 +817,4 @@ function renderTask(task) {
 
   tasksList.insertAdjacentHTML('beforeend', taskHTML);
 }
+
