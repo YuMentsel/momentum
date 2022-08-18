@@ -803,7 +803,6 @@ async function getLinkToImage() {
 }
 
 async function getLinkToImageFl() {
-  console.log(tag.value);
   let url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=a56496294ff2d5742b92d3ea6afe77ea&tags=${tag.value}&extras=url_l&format=json&nojsoncallback=1`;
   let res = await fetch(url);
   const data = await res.json();
