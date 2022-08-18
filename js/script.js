@@ -612,6 +612,7 @@ function getRandomNum() {
   max = Math.floor(20);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+randomNum = getRandomNum();
 
 async function getLinkToImage() {
   let url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${timeOfDay}&client_id=lZ2XWIjdv_fQODDa29M1vv7dDTKWAWK4o9Cuhkk2tp4`;
@@ -632,7 +633,7 @@ async function getLinkToImageFl() {
 }
 
 function setBg() {
-  randomNum = getRandomNum();
+
   let bgNum = randomNum > 9 ? randomNum : '0' + randomNum;
 
   if (choiceBg == 'git') {
