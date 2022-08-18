@@ -4,11 +4,28 @@ const greeting = document.querySelector('.greeting');
 const body = document.querySelector('body');
 const langIcon = document.querySelector('.lang-icon');
 const enterName = document.querySelector('.name');
+const greetingContainer = document.querySelector('.greeting-container');
+const quoteContainer = document.querySelector('.quote-wrapper');
+const todoContainer = document.querySelector('.todo-wrapper');
+const playerContainer = document.querySelector('.player-wrapper');
+const weath = document.querySelector('.weather');
+const api = document.querySelector('.bg-wrapper');
+const apiIcon = document.querySelector('.api-icon');
 
 // Язык
 
 let settingsObj = {
   language: 'en',
+  blocks: [
+    'time',
+    'date',
+    'greetingContainer',
+    'quoteContainer',
+    'weath',
+    'playerContainer',
+    'todoContainer',
+  ],
+
 };
 let language = 'en';
 
@@ -17,8 +34,61 @@ function saveSettingsToLS() {
 }
 
 function changeLangObj() {
-  settingsObj.language == 'en' ? 
-  settingsObj.language = 'ru' : settingsObj.language = 'en';
+  settingsObj.language == 'en'
+    ? (settingsObj.language = 'ru')
+    : (settingsObj.language = 'en');
+  saveSettingsToLS();
+}
+
+function removeSettingEl() {
+  if (time.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'time' })
+  } else {
+    settingsObj.blocks.push('time')
+  };
+
+  if (date.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'date' })
+  } else {
+    settingsObj.blocks.push('date')
+  };
+
+  if (greetingContainer.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'greetingContainer' })
+  } else {
+    settingsObj.blocks.push('greetingContainer')
+  };
+
+  if (quoteContainer.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'quoteContainer' })
+  } else {
+    settingsObj.blocks.push('quoteContainer')
+  };
+
+  if (weath.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'weath' })
+  } else {
+    settingsObj.blocks.push('weath')
+  };
+
+  if (playerContainer.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'playerContainer' })
+  } else {
+    settingsObj.blocks.push('playerContainer')
+  };
+
+  if (todoContainer.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'todoContainer' })
+  } else {
+    settingsObj.blocks.push('todoContainer')
+  };
+
+  if (api.classList.contains('opacity')){
+    settingsObj.blocks = settingsObj.blocks.filter((i) => { return i !== 'api' })
+  } else {
+    settingsObj.blocks.push('api')
+  };
+
   saveSettingsToLS();
 }
 
@@ -27,15 +97,63 @@ function recoverySettings() {
     settingsObj = JSON.parse(localStorage.getItem('settingsLS'));
     language = settingsObj.language;
     if (language == 'ru') {
-      language = 'ru';
       langIcon.classList.toggle('ru');
     }
+
+    settingsObj.blocks.forEach((el) => {
+    
+      if (!el) {
+        el.classList.remove('opacity');
+      }
+    })
+
     getWeather();
     getQuotes();
   }
 }
 
+function recoverySettingEl() {
+  if (localStorage.getItem('settingsLS')) {
+    settingsObj = JSON.parse(localStorage.getItem('settingsLS'));
+
+      if (!settingsObj.blocks.includes('time')) {
+        time.classList.add('opacity');
+      }
+
+      if (!settingsObj.blocks.includes('todoContainer')) {
+        todoContainer.classList.add('opacity');
+      }
+
+      if (!settingsObj.blocks.includes('date')) {
+        date.classList.add('opacity');
+      }
+
+      if (!settingsObj.blocks.includes('greetingContainer')) {
+        greetingContainer.classList.add('opacity');
+      }
+
+      if (!settingsObj.blocks.includes('quoteContainer')) {
+        quoteContainer.classList.add('opacity');
+      }
+
+      if (!settingsObj.blocks.includes('weath')) {
+        weath.classList.add('opacity');
+      }
+
+      if (!settingsObj.blocks.includes('playerContainer')) {
+        playerContainer.classList.add('opacity');
+      }
+
+      if (settingsObj.blocks.includes('api')) {
+        api.classList.remove('opacity');
+      }
+
+  }
+
+}
+
 window.addEventListener('load', recoverySettings);
+window.addEventListener('load', recoverySettingEl);
 
 function changeLang() {
   if (language == 'en') {
@@ -579,50 +697,58 @@ settingsIcon.addEventListener('click', toggleHidden);
 
 function toggleOpacityTime() {
   time.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 
 timeIcon.addEventListener('click', toggleOpacityTime);
 
 function toggleOpacityDate() {
   date.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 dateIcon.addEventListener('click', toggleOpacityDate);
 
-const greetingContainer = document.querySelector('.greeting-container');
-const quoteContainer = document.querySelector('.quote-wrapper');
-const todoContainer = document.querySelector('.todo-wrapper');
-const playerContainer = document.querySelector('.player-wrapper');
-const weath = document.querySelector('.weather');
-const api = document.querySelector('.bg-wrapper');
-const apiIcon = document.querySelector('.api-icon');
-
 function toggleOpacityGreeting() {
   greetingContainer.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 greetingIcon.addEventListener('click', toggleOpacityGreeting);
 
 function toggleOpacityQuote() {
   quoteContainer.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 quoteIcon.addEventListener('click', toggleOpacityQuote);
 
 function toggleOpacityApi() {
   api.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 apiIcon.addEventListener('click', toggleOpacityApi);
 
 function toggleOpacityTodo() {
   todoContainer.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 todoIcon.addEventListener('click', toggleOpacityTodo);
 
 function toggleOpacityPlayer() {
   playerContainer.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 audioIcon.addEventListener('click', toggleOpacityPlayer);
 
 function toggleOpacityWeather() {
   weath.classList.toggle('opacity');
+  removeSettingEl();
+  saveSettingsToLS();
 }
 weathIcon.addEventListener('click', toggleOpacityWeather);
 
