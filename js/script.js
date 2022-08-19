@@ -675,7 +675,8 @@ function playSong(e) {
   }
   isPlaying = true;
   songs.forEach((el) => el.classList.remove('item-active'));
-  // repeatTrack();
+  currentSong = document.getElementById(`${current_index}`);
+  currentSong.classList.add('item-active');
 }
 
 function setActiveSong() {
